@@ -1,0 +1,17 @@
+# Use the latest PostgreSQL image as the base
+FROM postgres:latest
+
+# Set the environment variable POSTGRES_PASSWORD
+ENV POSTGRES_PASSWORD=password
+
+# Expose PostgreSQL port
+EXPOSE 5432
+
+# Switch to root user to install vim and sudo
+USER root
+
+# Update the package lists and install vim and sudo
+RUN apt-get update && apt-get install -y vim sudo
+
+# Switch back to the default postgres user before starting the container
+USER postgres

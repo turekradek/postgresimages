@@ -1,0 +1,308 @@
+Adam	Adaś, Adasiek, Adi	Adam
+Adrian	Adek, Adi	Adrian
+Albert	Albercik, Bercik	Albert
+Albin		Albin
+Aleksander	Alek, Aleks, Olek	Alexander
+Aleksy	Alek, Aleks, Olek	Alex
+Alfons	Alek, Aluś	Alphonso
+Ambroży	Ambrożyk	Ambrose
+Anatol	Tolek	Anatole
+Andrzej	Andrzejek, Jędrek, Jędruś, Jędrzej	Andrew
+Anioł		Angel, Angelus
+Antoni	Antek, Antoś, Tolek, Toni, Tosiek	Anthony
+Antonin	Antek, Antoś, Tolek, Toni, Tosiek	Anthony
+Antonius	Antek, Antoś, Tolek, Toni, Tosiek	Anthony
+Anzelm		Anselm
+Apoloniusz	Polek	Apollonius
+Arkadiusz	Arek, Aruś, Areczek	Arcadius
+Arkady	Arek, Aruś, Areczek	Arcadius
+Arnold	Arni	Arnold
+Artur	Artek, Artuś	Arthur
+August	Gustek, Gutek, Gucio	Augustus
+Augustyn	Gustek	Augustine
+Bartłomiej	Bartek, Batosz, Bartuś	Bartholomew
+Bartosz	Bartek, Bartuś	Bart
+Bazyli		Basil
+Benedykt	Benek, Benio, Benuś	Benedict
+Bernard		Bernard
+Błażej	Błażek, Blażko	Blase, Blaise
+Bogdan	Bodek, Bogdanek, Boguś	bog = 'God' + dan = 'gift'  
+Bogumił	Boguś, Miłek	bog = 'God' + mil = 'beloved' : Theodore  
+Bogumir	Boguś, Mirek	bog = 'God' + mir = 'peace' : Godfrey  
+Bogusław	Boguś, Bogusz, Sławek	bog = 'God' + sław = 'fame, glory, renown'  
+Bolesław	Bolek, Boluś	Boleslaus
+Bonifacy		Boniface
+Borys	Borysek	Boris
+Borysław	Boleczek, Bolek, Boluś	 
+Bożidar		boži = 'from God' + dar = 'gift' : Theodore  
+Bożimir		boži = 'from God' + mir = 'peace' : Godfrey  
+Bronisław	Bronek	Bronislaus
+Brunon	Bruno, Brunonek	Bruno
+Budzisław		 
+Celestyn		Celestine
+Cezary	Czarek, Zarek	Cesar,Caesar
+Chrystian		Christian
+Chwalibóg		 
+Chwalimir		 
+Cyprian	Cyprianek	Cyprian
+Cyryl		Cyril
+Czesław	Czesiek, Czesio, Cześ	Ceslaus
+Damian	Damianek, Damianuś	Damien, Damian
+Daniel	Danielek	Daniel
+Danuta	Danusia	Donna
+Dariusz	Darek, Daruś, Dareczek	Darius
+Dawid	Dawidek	David
+Dekster	Deks, Dyksy	Dexter
+Denis	Denisek	Dennis
+Dionizy	Dionek	Dion, Dennis
+Dobiesław		dob = + sław = 'fame, glory, renown'  
+Dobrogost		dobro = 'good' + gost = 'guest'  
+Dobrosław		dobro = 'good' + sław = 'fame, glory, renown'  
+Dominik	Domek, Domeczek, Dominiczek	Dominick, Dominic
+Donat	Donek, Doniu	Donatus
+Dymitr	Dymek	Dimitri
+Edmund	Edek, Edzio, Edi, Mundek, Mundzio	Edmund, Edmond
+Edward	Edek, Edzio, Edi	Edward
+Eliasz		Elijah, Elias
+Emil	Emilek, Emi	Emile
+Ernest	Erin, Erni	Ernest
+Eryk	Eryczek	Eric
+Eugeniusz	Genek, Genio, Gienek	Eugene
+Fabian	Fabianek	Fabius
+Felicjan		Felician
+Feliks	Felek	Felix
+Ferdynand	Ferdek, Ferdzik	Ferdinand
+Filip	Fifi, Fil, Filek, Filipek, Filon	Philip
+Florentyn		Florentine
+Florian	Florek	Florian
+Fortunat		Fortunatus
+Franciszek	Franek, Franio, Fraszko ?	Francis, Frank
+Franciszek Ksawery		Francis Xavier
+Fryderyk	Fredyk, Fredzio, Frycek, Frydek	Frederick, Fred
+Gabriel	Gabryś	Gabriel
+Gaj		Gaius
+Gaweł		Gallus, Gall
+Gerard	Gerardzik	Gerard, Garrett
+Gerwazy		Gervase
+Ginter	Gintek, Gint	Gunther
+Godzisław	Godek, Godko	 
+Gościsław		 
+Grzegorz	Grzesiek, Grześ	Gregory
+Grodzisław		 
+Gustaw	Gustek, Gucio	Gustave, Gustav
+Gwalbert		Gualbert, Walbert
+Halina		Helen
+Hanusz	Hanuszek	John
+Henryk	Heniek, Henio	Henry, Harry
+Herbert	Herbercik, Bercik	Herbert
+Hieronim	Hirek	Jerome
+Hilary		Hilary
+Hipolit	Hipcio, Hipek	Hippolytus
+Honorat		Honor
+Horacy	Horuś, Racek	Horace, Horatio
+Hubert	Hubercik, Bercik	Hubert
+Hugo	Huguś	Hugh, Hugo
+Idzi	Dzidek, Idzik, Jidzik	Giles, Aegidius
+Ignacy	Ignacek, Ignaś	Ignatius
+Igor	Igorek, Iguś	Igor
+Inocenty		Innocent
+Ireneusz	Irek, Iruś	Ireneus
+Iwan	Iwanek, Iwek	Ivan
+Iwo	Iwek	Ivo
+Iwon	Iwek	Ivo
+Izajasz		Isaiah
+Izydor	Izydorek, Dorek	Isidore
+Jacek	Jacuś	Jack
+Jakub	Kuba, Kubuś, Jakubek	Jacob, James
+Jan	Janek, Jasiek, Jaś	John
+Janusz	Janek, Januszek, Janeczek	John, Jack
+Jaromir	Jarek, Jaruś, Jareczek	Jaromir
+Jaropełk	Jarek, Jaruś, Jareczek	Yaropolk
+Jarosław	Jarek, Jaruś, Jareczek	Jaroslav
+Jerzy	Jurek, Jerzyk	George
+Jędrzej	Jędrek, Jędruś	
+Joachim	Joachinek	Joachim
+Jozafat		Josephat
+Józef	Józek, Józefek, Józio, Ziutek	Joseph
+Józefat		Josephat
+Julian	Julek	Julian
+Juliusz	Julek	Jules, Julius
+Juri	Jurek	Yuri
+Justyn	Justyś	Justin
+Kacper	Kasparek, Kacperek, Kaspruś	Jasper, Casper
+Kajetan	Kajtek	Cajetan, Cajetanus
+Kamil	Kamilek	Camillus
+Kanimir	Szimer	 
+Karol	Karolek, Lolek	Charles, Carl
+Kasper	Kasparek, Kacperek, Kaspruś	Jasper, Casper
+Kazimierz	Kazek, Kazik, Kazio	Casimir
+Klaudiusz		Claude
+Klemens	Klimek, Klimko	Clement
+Kondrat		Conrad
+Konrad	Konradek, Radek	Conrad
+Konstanty	Kostek	Constant
+Konstantyn	Kostek	Constantine
+Kornel		Cornelius
+Korneli	Kornel	Cornelius
+Korneliusz	Kornel	Cornelius
+Kosma		Cosmo, Cosmas
+Kryspyn		Crispin
+Krystian	Krystek, Kostek	Christian
+Krystyn		Christinus
+Krzesisław		 
+Krzysztof	Krzyś, Krzysio, Krzysiek, Krzysiu, Krzychu	Christopher
+Ksawery	Ksawerek, Kserek	Xavier
+Kwiatosław		kviat = 'flower' + slav = 'glory'
+Laurencjusz	Lorko, Lorek	Lawrence, Laurence
+Lech	Leszek, Lesiu (cf. Leszek, mythology: brothers Lech, Rus, Czech)	lech = 'Pole'
+Lechosław		lech = 'Pole' + slav = 'glory'
+Leo	Leonek, Leszek	Leon, Leo
+Leon	Leonek, Leszek	Leon, Leo
+Leokadiusz		Leocadius
+Leonard		Leonard
+Leopold	Poldek, Poldzio	Leopold
+Lesław		contracted form of Lechosław
+Leszek	Lescio, Lesiu	cf. Lech, = 'to act cunningly'
+Lew		Leon, Leo
+Longin		Longin
+Lubomił		lubo = 'loved' + mił = 'dear'
+Lubomir	Lubek	lubo = 'loved' + mir = 'peace'  
+Luborad		lubo = 'loved' + rad = 'help'  
+Lubosław		lubo = 'loved' + sław = 'fame, glory, renown'  
+Lucjan	Lucek	Lucian
+Ludomił		ludo = 'people' + mił = 'dear'  
+Ludomir	Ludek	ludo = 'people' + mir = 'peace'  
+Ludwik	Ludek	Lewis, Louis
+Łukasz	Łukaszek	Luke, Lucas
+Maciej	Maciek, Maciuś	Matthias
+Makary	Makarek	Macarius
+Maksymilian	Maks, Maksymek	Maximilian
+Malachiasz		Malachi
+Manfred		Manfred
+Marcel	Marcelek, Marcyś	Marcel, Marcellus
+Marceli	Marcelek, Marcyś	Marcel, Marcellus
+Marcin	Marcinek, Cinek	Martin, Martyn
+Marek	Mareczek, Maruś	Mark, Marc, Marcus
+Marian	Marianek, Mariuś, Maniek, Manio, Maruś, Maryś	Marion, Marianus
+Marin		Marin
+Mariusz	Mariuś, Mariuszek	Marius
+Maryn		Marin
+Mateusz	Maciek, Mateuszek, Mati	Matthew
+Maurycjusz		Maurice, Morris
+Maurycy	Maura,Maurycynek,Mauro	Maurice, Morris
+Maurycjusz		Maurice, Morris
+Medard		Medard
+Melchior		Melchior
+Metody		Methodius
+Michał	Michałek, Michaś, Misiek	Michael
+Mieszko	cf. Mieczysław	 
+Mieczysław	Mietek, Miecio, Mieczyk, Mieszko	Mitchell
+Mikołaj	Mikołajek, Mikołojek (Old Polish)	Nicholas
+Miłosz		
+Milan		 
+Mirosław	Mirek, Mireczek, (Old Polish: Mirosz, Miroszek)	 
+Napoleon		Napoleon
+Narcyz		Narcissus
+Natan	Natek, Nati	Nathan
+Natanael	Natan, Natek, Nati	Nathanael
+Nataniel	Natek, Natan, Nati	Nathaniel
+Nicefor		Nicephorus
+Niecisław		 
+Nikodem	Nik, Nikoś, Niko, Nikuś	Nicodemus
+Norbert	Bercik, Bert, Norbercik, Norbi	Norbert
+Oktawiusz	Oktawiuszek	Octavius
+Olaf	Olek, Olo	Olaf, Olav
+Oleg	Olek	Oleg
+Olgierd	Oleg, Olek	 
+Onufry	Nufcio	Onuphrius, Humphrey
+Oskar	Oskarek	Oscar
+Oswald	Osa	Oswald, Osvald
+Pabian		Fabian
+Pafnucy	Pafnucyk	Paphnutius
+Pakosław		 
+Pankracy	Pankracek, Kracek	Pancras
+Patryk	Patryś, Patuś	Patrick
+Paweł	Pawełek, Pawlik	Paul
+Pelagiusz		Pelagius
+Petroniusz		Petronius
+Piotr	Piotrek, Piotruś	Peter
+Polikarp	Polikarpek, Karp	Polycarp
+Prot		Protus ?
+Przemysł	Przemek	 
+Przemysław	Przemek, Przemuś, Przemo	 
+Radomił	Radek, Radzio	 
+Radomir	Radek, Radzio	 
+Radosław	Radek, Radzio	 
+Rafał	Rafałek, Rafcio	Raphael
+Rajmund	Rajmundek, Mundek, Mundzik	Raymond
+Remigiusz	Remik, Remcio	Remy, Remi
+Robert	Robek, Robcio, Robercik, Bercik	Robert
+Roch		Rock
+Roland		Roland
+Roman	Romek, Romuś, Romcio	Roman
+Romuald	Romek, Romuś, Romcio	Romuald
+Rudolf	Rudek, Rudzio	Rudolph
+Ryszard	Ryś, Rysiek, Rysio	Richard
+Sebastian	Seba, Sebek, Sobek, Sobuś, Bastian, Bastek	Sebastian
+Serafin		Seraphinus
+Sergiusz	Sergio, Serek	Serge
+Serwacy		Servatius, Servais
+Seweryn	Sewer, Sewek	Severin
+Siemowit		siemo = 'person, family' + wit = 'lord, master'  
+Sławomierz		 
+Sławomir	Sław, Sławek, Sławuś, Sławcio	slav = 'glory + meri = 'great, famous'  
+Sofroniusz		Sophron
+Stanisław	Staszek, Stach, Staś, Stasio	Stanislaus, Stanley
+Stefan	Stefanek, Stefek, Stefcio	Stephen, Steven
+Stojan		 
+Świętosław	Świętek, Sławek	 
+Sylwester	Sylwek, Sylwuś	Sylvester, Silvester
+Szczepan	Szczepanek, Szczepek	Stephen, Steven
+Szymon	Szymek, Szymuś	Simon, Simeon
+Tadeusz	Tadeuszek, Tadek, Tadzio, Tadzik	Thaddeus
+Teobald		Theobald, Tibald
+Teodor	Todek, Ted, Dorek	Theodore
+Teofil	Tolek, Teofilek, Teofilik, Fil, Filek, Teoś	Theophilus
+Tobiasz	Tobiaszek, Tobuś, Tobek, Tobi	Toby, Tobias
+Tomasz	Tomek, Tomko, Tomuś, Tomcio	Thomas
+Tomisław		 
+Tymon		Timon
+Tymoteusz	Tymek, Tymcio	Timothy
+Tytus	Tycio	Titus
+Urban	Urbanek, Urbaś	Urban
+Wacław	Wacek, Wacławek, Wacuś	Wenceslas
+Waldemar	Waldek, Waldeczek, Walduś, Waldzio	Waldemar, Valdemar
+Walenty	Walek	Valent
+Walentyn	Walek	Valentine
+Walerian	Walerek	Valerian
+Walter		Walter
+Wandelin		Wendelin
+Wawrzyniec	Wawrek, Wawrzek	Lawrence, Laurence
+Więcesław		Wenceslas
+Wendelin		Wendelin
+Wielisław	Wiesiek, Wiesio, Wiesulek	vele = 'great' + sław = 'famous, glory, renown'  
+Wiesław	Wiesiek, Wiesio, Wiesulek	vele = 'great' + sław = 'famous, glory, renown'  
+Wiktor	Wicio, Witek, Wituś, Wiktorek	Victor
+Wilhelm	Wilek, Wiluś	William
+Wincenty	Wicek, Witek	Vincent
+Witold	Witek, Wituś, Wicio	 
+Wisław		vele = 'great' + sław = 'famous, glory, renown' 
+Wit		Vitus, Guy
+Witalis	Witek, Wituś, Wicio	Vitalis
+Witold	Witek, Tolek, Tolo	wida = 'wide or witu = 'wood' + wald = 'ruler'  
+Witołd	Witek, Tolek, Tolo	Witold
+Władysław	Wład, Władeczek, Władek, Władzio	Ladislaus, Vladislav
+Włodzimierz	Włodek, Włodeczek, Włodzio	Vladimir
+Włodzisław	Włodek, Włodeczek, Włodzio	Ladislaus, Vladislav
+Wojciech	Wojtek, Wojtul, Wojtuś, Wojteczek, Wowa	voi = 'soldier, warrior' + tech = 'consolation'  
+Wojsław		voi = 'soldier, warrior' + sław = 'famous, glory, renown'  
+Zachariasz		Zachariah, Zachary
+Zbigniew	Zbyszek, Zbyszko, Zbysiek, Zbysio	zbit = 'to get rid of' + gniew = 'anger'  
+Zdzisław	Zdzisiek, Zdziś, Zdich, Zdiech, Zdisio, Zdziesz, Zdzieszko, Zdisek	zde = 'here, present' + sław = 'famous, glory, renown'  
+Żelisław	Żelek, Żelusz	zhelit = 'to desire' + sław = 'famous, glory, renown'  
+Zenobiusz	Zenek, Zenio, Zenus	Zenobius
+Zenon	Zenek, Zenio, Zenuś	Zenon, Zeno
+Ziemowit		siemo = 'person, family' + wit = 'lord, master'  
+Zygfryd	Zyga, Frydek	Sigfrid, Siegfried
+Zygmunt	Zyga, Zygmuntek, Zygmuś, Zyguś	Sigismund
+Żytomir	Żytek	zhit = 'to live' + meri = 'great, famous' or mir = 'peace'  
