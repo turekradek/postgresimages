@@ -27,7 +27,7 @@ def insert_data_to_table(cur, conn, data, keys_in_json):
 
 # Establish a connection to the PostgreSQL database
 conn = psycopg2.connect(
-    dbname="database_json",
+    dbname="postgres",
     user="postgres",
     password="password",
     host="localhost", # or the Docker Machine's IP if you're using Docker Toolbox
@@ -46,11 +46,16 @@ cur.execute("""
 """)
 conn.commit()
 
+# Open the JSON file and load the data
+with open('data.json') as f:
+    data = json.load(f) 
 # Usage example
 json_file_path = 'data.json'
 keys_in_json = check_json_keys(json_file_path)
 
 if keys_in_json:
+    with open(json_file_path) as f:
+        data = json.load(f)
     insert_data_to_table(cur, conn, data, keys_in_json)
 
 # Select and print first 5 rows in the table
