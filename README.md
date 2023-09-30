@@ -8,4 +8,5 @@ su - postgres -c "psql"
 \l 
 \d 
 \dt
+ALTER USER name WITH PASSWORD 'xyz';
 

@@ -49,3 +49,4 @@ CMD ["tail", "-f", "/dev/null"]
 # \l
 # \d 
 # \d table
+# ALTER USER postgres WITH PASSWORD 'xyz'

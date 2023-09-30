@@ -7,4 +7,4 @@
 sleep 5
 
 # Run the Python application
-python app.py
+python3 app.py
