@@ -7,7 +7,7 @@ import os
 # Create a list to store the data
 # data = []
 columns = []
-directory = r'Wyniki.txt'
+directory = r'Kierowcy.txt'
 
 def read_columns_from_file(file_name, separator ):
     
@@ -47,7 +47,7 @@ def create_data( file_name: str, dictionary: dict ):
         # print( f'=== 1 resutl {resutl }')
         resutl[keys[2]] = linia[2]
         # print( f'=== 2 resutl {resutl }')
-        #resutl[keys[3]] = linia[3]
+        resutl[keys[3]] = linia[3]
         # print( f'=== 3 resutl {resutl }')
         data.append( resutl ) 
         # print( f' index {index} \n data _+_+_+_+_+ {data}' )
@@ -59,7 +59,7 @@ def create_data( file_name: str, dictionary: dict ):
 data1 =  create_data(directory, dictionary )
 
 # Write the data to a JSON file
-with open('data3.json', 'w') as f:
+with open('data2.json', 'w') as f:
     json.dump(data1, f)
     
 # print( f' data1 {data1}\n\n\n]')
