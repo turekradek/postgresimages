@@ -1,6 +1,12 @@
 import json
 import psycopg2
+import argparse
 
+parser = argparse.ArgumentParser(description='PARSED ARGEMENTS.')
+args = parser.parse_args()
+print( f'args --- > {args} ')
+
+#NAME_OF_DATABASE = 
 def check_json_keys(file_path):
     with open(file_path) as f:
         data = json.load(f)

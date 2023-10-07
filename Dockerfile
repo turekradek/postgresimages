@@ -11,6 +11,9 @@ ADD . /app
 ENV DEBIAN_FRONTEND=noninteractive
 ENV TZ=Europe/Warsaw
 
+# install tools
+RUN apt-get update && \
+    apt-get install -y jq net-tools
 # Install Python, pip, sudo, vim, and dependencies for psycopg2-binary
 RUN apt-get update && \
     apt-get install -y python3.11 python3-pip sudo vim libpq-dev python3-dev build-essential

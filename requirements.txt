@@ -1,5 +1,9 @@
-psycopg2==2.9.6
-sqlalchemy==1.4.22
-simplejson==3.17.2
+attrs==23.1.0
+greenlet==2.0.2
 jsonschema==3.2.0
+psycopg2==2.9.6
+pyrsistent==0.19.3
+simplejson==3.17.2
+six==1.16.0
+SQLAlchemy==1.4.22
 
