@@ -18,6 +18,29 @@ RUN apt-get update && \
 RUN apt-get update && \
     apt-get install -y python3.11 python3-pip sudo vim libpq-dev python3-dev build-essential
 
+# INSTALL GIT 
+# RUN sudo apt-get install git-all 
+# install zsh 
+RUN apt-get update && apt-get install -y git-all
+RUN apt install zsh -y
+RUN sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+RUN git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel10k
+RUN git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
+
+# install zsh
+# RUN sh -c "$(wget -O- https://github.com/deluan/zsh-in-docker/releases/download/v1.1.5/zsh-in-docker.sh)" -- \
+#     -a 'CASE_SENSITIVE="true"'
+
+# Uses "Spaceship" theme with some customization. Uses some bundled plugins and installs some more from github
+# RUN sh -c "$(wget -O- https://github.com/deluan/zsh-in-docker/releases/download/v1.1.5/zsh-in-docker.sh)" -- \
+#     -t https://github.com/denysdovhan/spaceship-prompt \
+#     -a 'SPACESHIP_PROMPT_ADD_NEWLINE="false"' \
+#     -a 'SPACESHIP_PROMPT_SEPARATE_LINE="false"' \
+#     -p git \
+#     -p ssh-agent \
+#     -p https://github.com/zsh-users/zsh-autosuggestions \
+#     -p https://github.com/zsh-users/zsh-completions
 # Install PostgreSQL
 RUN apt-get install -y postgresql postgresql-contrib
 
@@ -53,3 +76,4 @@ CMD ["tail", "-f", "/dev/null"]
 # \d 
 # \d table
 # ALTER USER postgres WITH PASSWORD 'xyz'
+# docker run -d --name postgrestest20 -v ~/docker_test:/var/lib/docker_test -e POSTGRES_PASSWORD=radek -p 5433 postgres1:2.0
