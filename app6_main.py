@@ -13,29 +13,29 @@ import  psycopg2
 from sqlalchemy import create_engine, inspect
 import sqlalchemy as sa
 import openpyxl
-
+from app5_pd_to_sql import create_database, create_table, create_dataframe
 #table_name = 'kiersql1' #sys.argv[1]
 #new_database = 'matura2015'
-# postgres_username = 'postgres'
-# postgres_password = 'radek'
-# postgres_host = 'localhost'
-# postgres_port = '5432'
-# #postgres_dbname = f'table_name'
-# files_json = 'data3.json'
-# if n := len( sys.argv) == 2:
-#     new_database = sys.argv[1]
-#     #file_json = sys.argv[2]
-# elif n == 3:
-#     new_database = sys.argv[1]
-#     table_name = sys.argv[2]
-# elif n == 4:
-#     new_database = sys.argv[1]
-#     table_name = sys.argv[2]
-#     files_json = sys.argv[3]
-# else:
-#     new_database = 'matura2015'
-#     table_name = 'kiersql1' #sys.argv[1]
-#     file_json = 'data3.json'
+postgres_username = 'postgres'
+postgres_password = 'radek'
+postgres_host = 'localhost'
+postgres_port = '5432'
+#postgres_dbname = f'table_name'
+files_json = 'data3.json'
+if n := len( sys.argv) == 2:
+    new_database = sys.argv[1]
+    #file_json = sys.argv[2]
+elif n == 3:
+    new_database = sys.argv[1]
+    table_name = sys.argv[2]
+elif n == 4:
+    new_database = sys.argv[1]
+    table_name = sys.argv[2]
+    files_json = sys.argv[3]
+else:
+    new_database = 'matura2015'
+    table_name = 'kiersql1' #sys.argv[1]
+    file_json = 'data3.json'
 #def check_json_keys(file_path):
 #    with open(file_path) as f:
 #        data = json.load(f)
@@ -59,73 +59,74 @@ import openpyxl
 #        conn.commit()
 #    except Exception as e:
 #        print("Error occurred while inserting data:", e)
-        
-def create_dataframe(file_name):
-    with open(file_name, 'r') as f:
-        data = json.load( f )
-    df = pd.DataFrame(data)
-    return df 
+# FUNCTION FROM app5_pd_to_sql.py       
+# def create_dataframe(file_name):
+#     with open(file_name, 'r') as f:
+#         data = json.load( f )
+#     df = pd.DataFrame(data)
+#     return df 
 
-# data = create_dataframe('data2.json')
-# #print( data.head(20))
-# #data.to_sql(name='kiersql', con=con)
-# # Establish a connection to the PostgreSQL database
-# conn = psycopg2.connect(
-#     dbname="postgres",
-#     user="postgres",
-#     password="radek",
-#     host="localhost", # or the Docker Machine's IP if you're using Docker Toolbox
-#     port="5432"
-# )
-# print( 'CONNECTION CREATED')
-# cur = conn.cursor()
-# print( 'CUR DONE')
-def create_database( cur, conn , new_database):
-    """Creates a database in PostgreSQL.
+data = create_dataframe('data2.json')
+print( data.head(20))
+#data.to_sql(name='kiersql', con=con)
+# Establish a connection to the PostgreSQL database
+conn = psycopg2.connect(
+    dbname="postgres",
+    user="postgres",
+    password="radek",
+    host="localhost", # or the Docker Machine's IP if you're using Docker Toolbox
+    port="5432"
+)
+print( 'CONNECTION CREATED')
+cur = conn.cursor()
+print( 'CUR DONE')
+# FUNCTION FROM app5_pd_to_sql.py
+# def create_database( cur, conn , new_database):
+#     """Creates a database in PostgreSQL.
 
-    Args:
-      engine_database: A SQLAlchemy engine object.
-      new_database: The name of the database to create.
-    """
-    try:
-        conn.autocommit = True
-        # check id the database already exists
-        #cur.execute(f'SELECT 1 FROM pg_database where datname = {new_database};')
-        cur.execute("SELECT 1 FROM pg_database WHERE datname=\'{new_database}\';")
-        exists = cur.fetchone()
-        #for row in exists:
-        #    print( f'---- {row}')
-        if not exists:
-            cur.execute(f"""
-                CREATE DATABASE {new_database};
-                """)
-        #conn.commit()
-    except Exception as e:
-        print( "Error occured while creating the database: " , e )
+#     Args:
+#       engine_database: A SQLAlchemy engine object.
+#       new_database: The name of the database to create.
+#     """
+#     try:
+#         conn.autocommit = True
+#         # check id the database already exists
+#         #cur.execute(f'SELECT 1 FROM pg_database where datname = {new_database};')
+#         cur.execute("SELECT 1 FROM pg_database WHERE datname=\'{new_database}\';")
+#         exists = cur.fetchone()
+#         #for row in exists:
+#         #    print( f'---- {row}')
+#         if not exists:
+#             cur.execute(f"""
+#                 CREATE DATABASE {new_database};
+#                 """)
+#         #conn.commit()
+#     except Exception as e:
+#         print( "Error occured while creating the database: " , e )
+# FUNCTION FROM app5_pd_to_sql.py
+# def create_table( cur, conn , new_database):
+#     """Creates a database in PostgreSQL.
 
-def create_table( cur, conn , new_database):
-    """Creates a database in PostgreSQL.
+#     Args:
+#       engine_database: A SQLAlchemy engine object.
+#       new_database: The name of the database to create.
+#     """
 
-    Args:
-      engine_database: A SQLAlchemy engine object.
-      new_database: The name of the database to create.
-    """
-
-    cur.execute(f"""
-        CREATE TABLE IF NOT EXISTS {new_database} (
-            Id_kierowcy TEXT,
-            Nazwisko TEXT,
-            Imie TEXT,
-            Kraj TEXT
-        );
-    """)
-    conn.commit()
+#     cur.execute(f"""
+#         CREATE TABLE IF NOT EXISTS {new_database} (
+#             Id_kierowcy TEXT,
+#             Nazwisko TEXT,
+#             Imie TEXT,
+#             Kraj TEXT
+#         );
+#     """)
+#     conn.commit()
 
 
 #engine_database = sa.create_engine( f'postgresql://{postgres_username}:{postgres_password}@localhost:5432/' )
-# create_database( cur, conn , new_database ) 
+create_database( cur, conn , new_database ) 
 #engine = create_engine(f'postgresql://{postgres_username}:{postgres_password}@localhost:5432/{new_database}')
-# print( 'engine CREATED')
+print( 'engine CREATED')
 #data.to_sql(name='kiersql', con=engine, if_exists='replace',index=False)
 # Create table if it doesn't exist  DZIALA ALE TYLKO Z TABELA DLA WYNIKOW
 #cur.execute(f"""
@@ -145,7 +146,7 @@ def create_table( cur, conn , new_database):
 #table.create(engine)
 #data.to_sql( table_name, engine, if_exists='replace', index=False)
 
-# print( 'TABLE CREATED ' )
+print( 'TABLE CREATED ' )
 # Check if the table exists
 #insp = inspect(engine)
 #if not insp.has_table(f'{table_name}'):
@@ -181,8 +182,8 @@ def create_table( cur, conn , new_database):
 #except Exception as e:
 #    print("Error occurred while selecting data:", e)
 
-# conn.commit()
-# conn.close()
+conn.commit()
+conn.close()
 
 # if __name__=='__main__':
 #     pass
