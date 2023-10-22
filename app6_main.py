@@ -13,13 +13,27 @@ import  psycopg2
 from sqlalchemy import create_engine, inspect
 import sqlalchemy as sa
 import openpyxl
-from app5_pd_to_sql import create_database, create_table, create_dataframe
+import argparse 
+# from app5_pd_to_sql import create_database, create_table, create_dataframe
+# from json_test_all import read_columns_from_file, create_dictionary, create_data
 #table_name = 'kiersql1' #sys.argv[1]
 #new_database = 'matura2015'
 postgres_username = 'postgres'
 postgres_password = 'radek'
 postgres_host = 'localhost'
 postgres_port = '5432'
+parser = argparse.ArgumentParser(description='take arguments ')
+# Add command-line arguments
+parser.add_argument('file_to_read', help='The file to read.')
+parser.add_argument('file_name', nargs='?', help='The name of the output file (optional).')
+parser.add_argument('new_database', nargs='?', help='The name of the output file (optional).')
+# Parse the command-line arguments
+args = parser.parse_args()
+# Access the values
+file_to_read = args.file_to_read
+file_name = args.file_name
+print(f'file_to_read = {file_to_read}')
+print(f'file_name = {file_name}')
 #postgres_dbname = f'table_name'
 files_json = 'data3.json'
 if n := len( sys.argv) == 2:
@@ -36,36 +50,140 @@ else:
     new_database = 'matura2015'
     table_name = 'kiersql1' #sys.argv[1]
     file_json = 'data3.json'
-#def check_json_keys(file_path):
-#    with open(file_path) as f:
-#        data = json.load(f)
-#    if isinstance(data, list) and len(data) > 0 and isinstance(data[0], dict):
-#        keys = data[0].keys()
-#        return keys
-#    else:
-#        return None
+    
+    
+############ json test all .py 
+def read_columns_from_file(file_name, separator ):
+    
+    file = open( file_name , 'r' )
+    columns = file.readline().strip()
+    print(f'1 columns {columns}')
+    columns = columns.split( separator )
+    print(f'2 columns {columns}')
+    return columns 
 
-#def insert_data_to_table(cur, conn, data, keys_in_json):
-#    try:
-#        placeholders = ', '.join(['%s'] * len(keys_in_json))
-#        columns = ', '.join(keys_in_json)
-#        
-#        for item in data:
-#            values = [item[key] for key in keys_in_json]
-#            print(f'Inserting: {", ".join(map(str, values))}')
-#            
-#            query = f"INSERT INTO {table_name} ({columns}) VALUES ({placeholders})"
-#            cur.execute(query, values)
-#        conn.commit()
-#    except Exception as e:
-#        print("Error occurred while inserting data:", e)
-# FUNCTION FROM app5_pd_to_sql.py       
-# def create_dataframe(file_name):
-#     with open(file_name, 'r') as f:
-#         data = json.load( f )
-#     df = pd.DataFrame(data)
-#     return df 
+def create_dictionary(  columns: list ):
+    dictionary = {}
+    for name in columns:
+        dictionary[name] = name
+    return dictionary
 
+def create_data( file_name: str, dictionary: dict ):
+    file = open( file_name ,  'r' )
+    content = [  line. strip() for line in  file.readlines() ]
+    content = content[1:]    
+    data = []
+    keys = list( dictionary.keys() )
+    print( f'\n\n\nkeys: {keys}')
+    for index, linia in enumerate(content):
+        resutl = {}
+        linia = linia.split(';')
+        # print( f'linia : {linia}')
+        for i in range(len(keys)):
+            resutl[keys[i]] = linia[i]
+        data.append( resutl ) 
+        result = {}
+    print( data[:10], f'\n\n {len(data)}' )
+    return  data 
+
+def write_data_to_json(file_name, data1):
+    with open(file_name , 'w') as f:
+        json.dump(data1, f)
+        
+        
+############ json test all .py 
+
+############ app6 .py 
+def check_json_keys(file_path):
+    with open(file_path) as f:
+        data = json.load(f)
+    if isinstance(data, list) and len(data) > 0 and isinstance(data[0], dict):
+        keys = data[0].keys()
+        return keys
+    else:
+        return None
+
+def insert_data_to_table(cur, conn, data, keys_in_json):
+    try:
+        placeholders = ', '.join(['%s'] * len(keys_in_json))
+        columns = ', '.join(keys_in_json)
+        
+        for item in data:
+            values = [item[key] for key in keys_in_json]
+            print(f'Inserting: {", ".join(map(str, values))}')
+            
+            query = f"INSERT INTO {table_name} ({columns}) VALUES ({placeholders})"
+            cur.execute(query, values)
+        conn.commit()
+    except Exception as e:
+        print("Error occurred while inserting data:", e)
+ 
+############ app6 .py 
+
+####################################
+def create_dataframe(file_name):
+    with open(file_name, 'r') as f:
+        data = json.load( f )
+    df = pd.DataFrame(data)
+    return df 
+
+def create_database( cur, conn , new_database):
+    """Creates a database in PostgreSQL.
+
+    Args:
+      engine_database: A SQLAlchemy engine object.
+      new_database: The name of the database to create.
+    """
+    try:
+        conn.autocommit = True
+        # check id the database already exists
+        #cur.execute(f'SELECT 1 FROM pg_database where datname = {new_database};')
+        cur.execute("SELECT 1 FROM pg_database WHERE datname=\'{new_database}\';")
+        exists = cur.fetchone()
+        #for row in exists:
+        #    print( f'---- {row}')
+        if not exists:
+            cur.execute(f"""
+                CREATE DATABASE {new_database};
+                """)
+        #conn.commit()
+    except Exception as e:
+        print( "Error occured while creating the database: " , e )
+        
+def create_table( cur, conn , new_database):
+    """Creates a database in PostgreSQL.
+
+    Args:
+      engine_database: A SQLAlchemy engine object.
+      new_database: The name of the database to create.
+    """
+
+    cur.execute(f"""
+        CREATE TABLE IF NOT EXISTS {new_database} (
+            Id_kierowcy TEXT,
+            Nazwisko TEXT,
+            Imie TEXT,
+            Kraj TEXT
+        );
+    """)
+    conn.commit()
+
+def read_table( cur, conn , table_name ):
+    try:
+        cur.execute(f"SELECT * FROM {table_name}  LIMIT 5")
+        rows = cur.fetchall()
+        print("First 5 rows in the table:")
+        for row in rows:
+            print(row)
+    except Exception as e:
+        print("Error occurred while selecting data:", e)
+        
+###################################
+def read_excel_file( file_name ):
+    pass
+
+
+######################
 data = create_dataframe('data2.json')
 print( data.head(20))
 #data.to_sql(name='kiersql', con=con)
@@ -80,47 +198,8 @@ conn = psycopg2.connect(
 print( 'CONNECTION CREATED')
 cur = conn.cursor()
 print( 'CUR DONE')
-# FUNCTION FROM app5_pd_to_sql.py
-# def create_database( cur, conn , new_database):
-#     """Creates a database in PostgreSQL.
-
-#     Args:
-#       engine_database: A SQLAlchemy engine object.
-#       new_database: The name of the database to create.
-#     """
-#     try:
-#         conn.autocommit = True
-#         # check id the database already exists
-#         #cur.execute(f'SELECT 1 FROM pg_database where datname = {new_database};')
-#         cur.execute("SELECT 1 FROM pg_database WHERE datname=\'{new_database}\';")
-#         exists = cur.fetchone()
-#         #for row in exists:
-#         #    print( f'---- {row}')
-#         if not exists:
-#             cur.execute(f"""
-#                 CREATE DATABASE {new_database};
-#                 """)
-#         #conn.commit()
-#     except Exception as e:
-#         print( "Error occured while creating the database: " , e )
-# FUNCTION FROM app5_pd_to_sql.py
-# def create_table( cur, conn , new_database):
-#     """Creates a database in PostgreSQL.
-
-#     Args:
-#       engine_database: A SQLAlchemy engine object.
-#       new_database: The name of the database to create.
-#     """
-
-#     cur.execute(f"""
-#         CREATE TABLE IF NOT EXISTS {new_database} (
-#             Id_kierowcy TEXT,
-#             Nazwisko TEXT,
-#             Imie TEXT,
-#             Kraj TEXT
-#         );
-#     """)
-#     conn.commit()
+# create_database( cur, conn , new_database ) 
+# engine = create_engine(f'postgresql://{postgres_username}:{postgres_password}@localhost:5432/{new_database}')
 
 
 #engine_database = sa.create_engine( f'postgresql://{postgres_username}:{postgres_password}@localhost:5432/' )

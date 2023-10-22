@@ -101,8 +101,9 @@ def create_data( file_name: str, dictionary: dict ):
 data1 =  create_data(file_to_read, dictionary )
 
 # Write the data to a JSON file
-with open(file_name , 'w') as f:
-    json.dump(data1, f)
+def write_data_to_json(file_name, data1):
+    with open(file_name , 'w') as f:
+        json.dump(data1, f)
     
 # print( f' data1 {data1}\n\n\n]')
     
