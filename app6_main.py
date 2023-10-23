@@ -179,9 +179,14 @@ def read_table( cur, conn , table_name ):
         print("Error occurred while selecting data:", e)
         
 ###################################
-def read_excel_file( file_name ):
-    pass
+def create_dataframe_from_excel_sheet(file_name, name_sheet):
+    result = pd.read_excel(file_name, sheet_name=name_sheet)
+    return result
 
+######################
+def data_frame_to_sql(data_frame,table_name,  engine):
+    data_frame.to_sql(name=table_name, con=engine, if_exists='replace',index=False)
+    
 
 ######################
 data = create_dataframe('data2.json')
