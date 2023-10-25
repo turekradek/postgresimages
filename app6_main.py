@@ -32,24 +32,25 @@ args = parser.parse_args()
 # Access the values
 file_to_read = args.file_to_read
 file_name = args.file_name
+new_database = args.new_database
 print(f'file_to_read = {file_to_read}')
 print(f'file_name = {file_name}')
 #postgres_dbname = f'table_name'
 files_json = 'data3.json'
-if n := len( sys.argv) == 2:
-    new_database = sys.argv[1]
-    #file_json = sys.argv[2]
-elif n == 3:
-    new_database = sys.argv[1]
-    table_name = sys.argv[2]
-elif n == 4:
-    new_database = sys.argv[1]
-    table_name = sys.argv[2]
-    files_json = sys.argv[3]
-else:
-    new_database = 'matura2015'
-    table_name = 'kiersql1' #sys.argv[1]
-    file_json = 'data3.json'
+#if n := len( sys.argv) == 2:
+#    new_database = sys.argv[1]
+#    #file_json = sys.argv[2]
+#elif n == 3:
+#    new_database = sys.argv[1]
+#    table_name = sys.argv[2]
+#elif n == 4:
+#    new_database = sys.argv[1]
+#    table_name = sys.argv[2]
+#    files_json = sys.argv[3]
+#else:
+#    new_database = 'matura2015'
+#    table_name = 'kiersql1' #sys.argv[1]
+#    file_json = 'data3.json'
     
     
 ############ json test all .py 
@@ -206,11 +207,25 @@ print( 'CUR DONE')
 # create_database( cur, conn , new_database ) 
 # engine = create_engine(f'postgresql://{postgres_username}:{postgres_password}@localhost:5432/{new_database}')
 
-
+########################################## DODANE Z app61.py
 #engine_database = sa.create_engine( f'postgresql://{postgres_username}:{postgres_password}@localhost:5432/' )
 create_database( cur, conn , new_database ) 
 #engine = create_engine(f'postgresql://{postgres_username}:{postgres_password}@localhost:5432/{new_database}')
 print( 'engine CREATED')
+read_table(cur, conn, 'kierowcy')
+df_unavailable_sessions = create_dataframe_from_excel_sheet('unavailable_sessions_.xlsx', 'Unavailable sessions')
+print( df_unavailable_sessions.head(20))
+df_unavailable_sessions_part = df_unavailable_sessions.iloc[:200]
+# engine1 = create_engine(f'postgresql://{postgres_username}:{postgres_password}@localhost:5432/exceltest')
+
+#data_frame_to_sql(data_frame,table_name,  engine)
+# data_frame_to_sql(df_unavailable_sessions_part ,'test1excel',  engine1)
+#
+#read_table(cur, conn, 'test1excel')
+# create_database( cur, conn , new_database )
+# engine = create_engine(f'postgresql://{postgres_username}:{postgres_password}@localhost:5432/{new_database}')
+
+#################### doane z app61.py 
 #data.to_sql(name='kiersql', con=engine, if_exists='replace',index=False)
 # Create table if it doesn't exist  DZIALA ALE TYLKO Z TABELA DLA WYNIKOW
 #cur.execute(f"""
