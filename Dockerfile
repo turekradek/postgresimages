@@ -7,7 +7,7 @@ WORKDIR /app
 # Add the current directory contents into the container at /app
 ADD . /app
 
-RUN echo 'root:r' | chpasswd
+
 # Set environment variables to avoid timezone prompt
 ENV DEBIAN_FRONTEND=noninteractive
 ENV TZ=Europe/Warsaw
@@ -62,7 +62,10 @@ EXPOSE 80
 
 # Define environment variable
 ENV NAME World
-
+# Set environment variables (replace 'your_password' with your desired password)
+# ENV POSTGRES_USER postgres
+# ENV POSTGRES_PASSWORD your_password
+# ENV POSTGRES_DB your_database
 # Run a PostgreSQL command file:
 COPY init.sql /docker-entrypoint-initdb.d/
 
