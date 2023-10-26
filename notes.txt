@@ -8,3 +8,7 @@ docker run -p 5432:5432 -d my-python-app
 
 To activate the theme you need to edit your ~/.zshrc file in your personal folder and replace ZSH_THEME="robbyrussel with ZSH_THEME="powerlevel10k/powerlevel10k. After the change, you need to close and restart your terminal.
 plugins=(git zsh-autosuggestions <optional-other-plugins>).
+
+ psql -h localhost -d testdb3 -a -f a.sql
+ a.sql
+ SELECT * FROM table LIMIT 15;

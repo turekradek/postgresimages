@@ -7,6 +7,7 @@ WORKDIR /app
 # Add the current directory contents into the container at /app
 ADD . /app
 
+RUN echo 'root:r' | chpasswd
 # Set environment variables to avoid timezone prompt
 ENV DEBIAN_FRONTEND=noninteractive
 ENV TZ=Europe/Warsaw
