@@ -44,7 +44,8 @@ class PostgresConnection(PostgresCredentials):
             port=self.port
         )
         cur = conn.cursor()
-        return cur 
+        return conn, cur
+    
     def get_engine(self ):
         # engine = create_engine(f'postgresql://{postgres_username}:{postgres_password}@localhost:5432/{new_database}')
         engine = create_engine(f'postgresql://{self.username}:{self.password}@{self.host}:{self.port}/')
@@ -55,10 +56,11 @@ class PostgresConnection(PostgresCredentials):
         engine = create_engine(f'postgresql://{self.username}:{self.password}@{self.host}:{self.port}/{new_database}')
         return engine 
     def commit_connection(self, connection):
-        conn.commit()
+        connection.commit()
         
-    def close_conection(self,connection):
-        conn.close()
+    def close_connection(self,connection, cursor):
+        cursor.close()
+        connection.close()
         
 parser = argparse.ArgumentParser(description='take arguments ')
 # Add command-line arguments
