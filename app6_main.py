@@ -215,7 +215,9 @@ def insert_data_to_table(cur, conn, data, keys_in_json):
         print("Error occurred while inserting data:", e)
  
 ############ app6 .py 
-
+def file_text_to_dataframe(file_name):
+    df = pd.read_table(file_name, sep=';')#, header=True)
+    return df 
 ####################################
 def create_dataframe(file_name):
     with open(file_name, 'r') as f:
@@ -410,5 +412,11 @@ if __name__=='__main__':
             print( df.head(15) ) 
             data_frame_to_sql( df, sheet, engine)
             # read_tabel( cur, conn, table_name)
+    if file_to_read.endswith('.txt'):
+        df = file_text_to_dataframe(file_to_read)
+        table_name = file_to_read.split('.txt')[0].lower()
+        engine_table = create_engine(f'postgresql://{postgres_username}:{postgres_password}@localhost:5432/')
+        data_frame_to_sql(df, table_name, engine_table)
+        
     conn.commit()
     conn.close()
