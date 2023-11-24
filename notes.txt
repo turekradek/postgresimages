@@ -12,3 +12,9 @@ plugins=(git zsh-autosuggestions <optional-other-plugins>).
  psql -h localhost -d testdb3 -a -f a.sql
  a.sql
  SELECT * FROM table LIMIT 15;
+
+SELECT kier."Id_kierowcy", kier."Nazwisko", kier."Imie", wyn."Punkty", wyn."Id_wyscigu", wys."GrandPrix"
+FROM kier
+JOIN wyn ON kier."Id_kierowcy" = wyn."Id_kierowcy"
+JOIN wys ON wyn."Id_wyscigu" = wys."Id_wyscigu"
+LIMIT 5;
