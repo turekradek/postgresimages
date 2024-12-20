@@ -1,0 +1,20 @@
+psycopg2-binary==2.8.6
+sqlalchemy==1.4.22
+simplejson==3.17.2
+jsonschema==3.2.0
+
+docker build -t my-python-app .
+docker run -p 5432:5432 -d my-python-app
+
+To activate the theme you need to edit your ~/.zshrc file in your personal folder and replace ZSH_THEME="robbyrussel with ZSH_THEME="powerlevel10k/powerlevel10k. After the change, you need to close and restart your terminal.
+plugins=(git zsh-autosuggestions <optional-other-plugins>).
+
+ psql -h localhost -d testdb3 -a -f a.sql
+ a.sql
+ SELECT * FROM table LIMIT 15;
+
+SELECT kier."Id_kierowcy", kier."Nazwisko", kier."Imie", wyn."Punkty", wyn."Id_wyscigu", wys."GrandPrix"
+FROM kier
+JOIN wyn ON kier."Id_kierowcy" = wyn."Id_kierowcy"
+JOIN wys ON wyn."Id_wyscigu" = wys."Id_wyscigu"
+LIMIT 5;

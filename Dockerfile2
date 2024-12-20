@@ -1,0 +1,45 @@
+# Stage 1: Install Python dependencies and psycopg2
+FROM python:3.11 AS python_deps
+
+# Install system packages temporarily with root user
+USER root
+RUN apt-get update && apt-get install -y postgresql-server-dev-all
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Copy requirements.txt
+COPY requirements.txt .
+
+# Install Python packages (including psycopg2)
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Stage 2: PostgreSQL image with Python
+FROM postgres:latest
+
+# Set the environment variable POSTGRES_PASSWORD
+ENV POSTGRES_PASSWORD=mypassword
+
+# Expose PostgreSQL port
+EXPOSE 5432
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Switch back to the default postgres user
+USER postgres
+
+# Copy the Python dependencies from the first stage
+COPY --from=python_deps /usr/local/lib/python3.11/site-packages /usr/local/lib/python3.11/site-packages
+
+# Copy the rest of the application files into the container
+COPY . .
+
+# Explicitly create a volume for PostgreSQL data
+VOLUME /var/lib/postgresql/data
+
+# Start the PostgreSQL server and keep it running in the background
+CMD ["postgres"]
+
+# To manually run the Python application:
+# docker exec -it <CONTAINER_ID> python app.py

@@ -1,0 +1,180 @@
+test
+import sys
+ 
+n = int(sys.argv[1])
+print(n+1)
+
+to mount local directory as a volume in docker container
+
+-v $(pwd)/datadir:/var/lib/mysql
+
+
+-v <source>:<target>
+
+-v $(pwd)/~/docker_test:/var/lib/docker_test 
+
+docker run -d --name postgrestest20 -v ~/docker_test:/home/docker_test -e POSTGRES_PASSWORD=radek -p 5433 postgres1:2.0
+
+https://www.digitalocean.com/community/questions/how-to-ping-docker-container-from-another-container-by-name
+
+
+    Create two containers:
+
+docker run -d --name web1  -p 8001:80 eboraas/apache-php
+docker run -d --name web2  -p 8002:80 eboraas/apache-php
+
+
+
+    Then create a new network:
+
+docker network create myNetwork
+
+    After that connect your containers to the network:
+
+docker network connect myNetwork web1
+docker network connect myNetwork web2 
+
+    Check if your containers are part of the new network:
+
+docker network inspect myNetwork
+
+
+    Then test the connection:
+
+docker exec -ti web1 ping web2
+
+
+docker run -d --name postgrestest20 -e POSTGRES_PASSWORD=password -p 5432 postgres1:2.0
+
+docker run -d --name alpine1 -p 8001:80 alpine1:1.0
+docker run -d --name fedora1 -p 8002:80 fedora1:1.0
+
+
+docker network connect testNetwork alpine1
+❯ docker network connect testNetwork fedora1
+❯ docker network inspect testNetwork
+
+docker exec -it alpine1 sh
+/app # ping fedora1
+
+
+https://www.cloudsigma.com/sharing-data-between-docker-containers/
+
+Step 1: Create Independent Docker Volumes
+
+1
+docker volume create --name Step1DataVolume
+
+1	
+docker run -ti --rm -v Step1DataVolume:/Step1DataVolume ubuntu
+
+1
+echo "Step One Sample Text" > /Step1DataVolume/StepOne.txt
+
+docker volume inspect Step1DataVolume
+
+docker run -ti --rm -v Step1DataVolume:/Step1DataVolume ubuntu
+
+cat /Step1DataVolume/StepOne.txt
+
+
+Step 2: Creating a Docker Volume that Persists Data when you Delete a Container
+
+docker run -ti --name=Step2Container1 -v Step2DataVolume:/Step2DataVolume ubuntu
+
+
+echo "Step Two Sample Text" > /Step2DataVolume/StepTwo.txt
+ 
+cat /Step2DataVolume/StepTwo.txt
+
+docker volume rm Step2DataVolume
+
+docker rm e3932e65e484bbf4524ca8de1b1dd99c4e92c12f92a9d6b0567a643d0aa6bb2d
+
+docker volume ls
+
+Step 3: Creating a Docker Volume from an Existing Directory with Data
+
+Step 4: Sharing Data Between Multiple Docker Containers
+
+In most cases, you will want multiple containers to access data from one Docker volume. In the previous examples, we have only attached a volume to one container. Now, you will learn how to attach a volume to multiple containers. While you can achieve this easily, Docker does not handle file locking. For multiple containers writing to the same volume, you must individually design the applications running in those containers to handle writing to shared data stores to avoid data corruption.
+
+    Create Step4Container1 and Step4DataVolume
+
+Use the docker run command with the --name flag to create a named container:
+docker run -ti --name=Step4Container1 -v Step4DataVolume:/Step4DataVolume ubuntu
+1
+	
+docker run -ti --name=Step4Container1 -v Step4DataVolume:/Step4DataVolume ubuntu
+
+Inside the container, run the following command to create a text file and add some text:
+echo "Step Four Sample Text" > /Step4DataVolume/StepFour.txt
+1
+	
+echo "Step Four Sample Text" > /Step4DataVolume/StepFour.txt
+
+After that, exit the container and get back to the host environment. Now, we want to create another container and mount the volumes from Step4Container1 to it.
+
+    Create Step4Container2 and attach the volumes from the container Step4Container1
+
+Execute the following command to create Step4Container2 and mount volumes from Step4Container1:
+docker run -ti --name=Step4Container2 --volumes-from Step4Container1 ubuntu
+1
+	
+docker run -ti --name=Step4Container2 --volumes-from Step4Container1 ubuntu
+
+Inside the container, use the cat command to verify data persistence:
+cat /Step4DataVolume/StepFour.txt
+1
+	
+cat /Step4DataVolume/StepFour.txt
+
+We can append some more text to the file from Step4Container2 by entering the following command:
+echo "We are appending text while inside Step4Container2" >> /Step4DataVolume/StepFour.txt
+1
+	
+echo "We are appending text while inside Step4Container2" >> /Step4DataVolume/StepFour.txt
+
+Exit the container after this and we will go back to Step4Container1 to check if the data is still present.
+
+    Verify changes made in the Docker volume between different containers
+
+To view the changes, you will first restart the Step4Container1 using the command:
+docker start -ai Step4Container1
+1
+	
+docker start -ai Step4Container1
+
+Check for changes using the command:
+cat /Step4DataVolume/StepFour.txt
+1
+	
+cat /Step4DataVolume/StepFour.txt
+
+
+    Mounting a volume to a Docker container as read-only
+
+For this example, we will create a container named Step4Container3. In the create command, we mount volumes from Step4Container1 and add :ro to specify that this container has read-only access but cannot write to the volume. Execute the following command in your terminal:
+docker run -ti --name=Step4Container3 --volumes-from Step4Container1:ro ubuntu
+1
+	
+docker run -ti --name=Step4Container3 --volumes-from Step4Container1:ro ubuntu
+
+1
+
+	
+docker rm Step4Container1 Step4Container2 Step4Container3
+ 
+docker volume rm Step4DataVolume
+
+
+
+
+
+
+
+
+
+
+
+
